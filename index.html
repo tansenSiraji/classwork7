@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Mid Q4</title>
+    <link href="style.css" rel="stylesheet" type="text/css">
+  </head>
+  <body>
+      <!-- Your site content here -->
+    <button id = 'show'>Show all Users</button>
+    <div id = 'users'></div>
+
+      <script src="jquery-3.3.1.min.js"></script>
+      <script src="script.js"></script>
+      <script>
+      $("#show").click(function(){
+          $.ajax({
+              method: "GET",
+              url: "http://skeleton.mernbook.com/api/users"
+          }).done(function(response){
+              console.log("Done")
+              console.log(response)
+              for(var i = 0; i < response.length; i++){
+                var name = $('<p>').text(response[i].name)
+                $('#users').append(name)
+              }
+              
+          }).fail(function(response){
+              console.log("Failed")
+              console.log(response)
+          })
+      });
+      </script>
+  </body>
+</html>

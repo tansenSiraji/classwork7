@@ -13,7 +13,7 @@
       <input id = 'name' type = 'text' placeholder="Name"><br/>
       <input id = 'email' type = 'email' placeholder="Email"><br/>
       <input id = 'password' type = 'password' placeholder="Password"><br/>
-      <button id = 'signup'>Sign Up</button>
+      <button id = 'signup'>Sign Up</button><br>
       
     </div>
 
@@ -33,7 +33,8 @@
               console.log(response)
           }).fail(function(response){
             console.log(response)
-            $("#add").append("Name is required")
+            
+            $("#add").append("<p>Name is required</p>")
             
           })
         });
